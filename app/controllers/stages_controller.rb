@@ -1,6 +1,5 @@
 class StagesController < ApplicationController
   def home
-    # 랜더링은 다 되는데 뷰가 겹쳐보임..!
     @stages = Stage.paginate(page: params[:page]).order('created_at DESC')
     respond_to do |format|
       format.html

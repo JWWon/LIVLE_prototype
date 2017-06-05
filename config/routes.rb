@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'upcomings#home'
+  root 'stages#home'
 
   get 'artists/home'
   get 'artists/list'

@@ -5,18 +5,13 @@
   </div>
 </div>
 
-<% @upcomings.each do |upcoming| %>
-    <div class="list-video">
-      <div class="background-video">
-        <img class="thumbnail-img" src="http://img.youtube.com/vi/<%= upcoming.youtube_id %>/maxresdefault.jpg"/>
-      </div>
-      <div class="descript-upcoming-video text-center">
-        <h1><%= upcoming.title %></h1>
-        <h2><%= upcoming.artist %></h2>
-      </div>
-      <a href="/upcomings/<%= upcoming.id %>/watch" class="btn-video" method="get"></a>
-    </div>
-<% end %>
+<div id="upcomings">
+  <%= render @upcomings %>
+</div>
+
+<div class="infinite-scrolling">
+  <%= will_paginate %>
+</div>
 
 <!-- Bottom NavBar -->
 <div class="bottom-navbar">

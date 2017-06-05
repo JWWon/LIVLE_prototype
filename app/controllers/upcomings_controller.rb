@@ -1,6 +1,10 @@
 class UpcomingsController < ApplicationController
   def home
-    @upcomings = Upcoming.all
+    @upcomings = Upcoming.paginate(page: params[:page]).order('created_at DESC')
+    respond_to do |format|
+      format.html
+      format.js { render 'upcomings/scroll_upcoming' }
+    end
   end
 
   def watch
@@ -13,8 +17,12 @@ class UpcomingsController < ApplicationController
   # upcoming db CREATE
   def create_upcoming
     @upcoming = Upcoming.create(title: params[:title], artist: params[:artist], youtube_id: params[:youtube_id], d_day: params[:d_day], place: params[:place], ticket_link: params[:ticket_link])
-    @upcoming.save
-    redirect_back(fallback_location: root_path)
+
+    if @upcoming.save
+      redirect_back(fallback_location: root_path)
+    else
+      render text: @upcoming.errors.message
+    end
   end
 
   private
