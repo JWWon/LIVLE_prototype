@@ -1,0 +1,53 @@
+<div style="background: url(http://img.youtube.com/vi/<%= @upcoming.youtube_id %>/maxresdefault.jpg) no-repeat center center;
+    width: auto; height: 100%; overflow-y: hidden; background-size: cover;">
+  <div class="detail-container">
+    <!-- Top NavBar -->
+    <div class="top-navbar">
+      <div class="row">
+        <div class="col-xs-2 text-center">
+          <%= link_to image_tag("icon_redirect@2x.png"), :controller => :upcomings, :action => :home, :method => :get %>
+        </div>
+        <div class="col-xs-offset-2 col-xs-4 text-center">
+          <%= image_tag("icon_recording@2x.png", :style => "display: inline-block; margin-top: -6%;") %>
+          <p class="navbar-font" style="display: inline-block; padding-left: 6%; color: #FF0000">LIVLE</p>
+        </div>
+      </div>
+    </div>
+
+
+    <hr>
+    <!-- YOUTUBE VEDIO -->
+    <div class="list-video">
+      <iframe class="background-video" src='https://www.youtube.com/embed/<%= @upcoming.youtube_id
+      %>?rel=0&modestbranding=1&showinfo=0&loop=1&autoplay=1&playlist=<%= @upcoming.youtube_id
+      %>' frameborder='0' allowfullscreen></iframe>
+    </div>
+
+    <div class="detail-descript">
+      <div class="row">
+        <div class="col-xs-6">
+          <h3><%= @upcoming.title %> - <%= @upcoming.artist %></h3>
+          <h4>#<%= @upcoming.d_day %>  #<%= @upcoming.place %></h4>
+        </div>
+        <div class="col-xs-offset-3 col-xs-3 ticket-place">
+          <%= link_to image_tag("icon_ticket@2x.png"), @upcoming.ticket_link %>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="detail-buttons">
+      <div class="row">
+        <div class="col-xs-6 text-center">
+          <%= image_tag("icon_heart@2x.png", :class => "display-horizon", :style => "margin-top: -13%;") %>
+          <h3 class="display-horizon">Like</h3>
+        </div>
+        <div class="col-xs-6 text-center">
+          <%= image_tag("icon_share@2x.png", :class => "display-horizon", :style => "margin-top: -16%;") %>
+          <h3 class="display-horizon">Share</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

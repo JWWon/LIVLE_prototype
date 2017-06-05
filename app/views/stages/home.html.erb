@@ -1,0 +1,29 @@
+<!-- Top NavBar -->
+<div class="top-navbar">
+  <div class="text-center">
+    <p class="navbar-font">LIVLE</p>
+  </div>
+</div>
+
+<div id="stages">
+  <%= render @stages %>
+</div>
+
+<div id="infinite-scrolling">
+  <%= will_paginate %>
+</div>
+
+<!-- Bottom NavBar -->
+<div class="bottom-navbar">
+  <div class="row">
+    <div class="col-xs-4 text-center">
+      <%= link_to "Stage", {:controller => :stages, :action => :home, :method => :get}, {class: "navbar-font"} %>
+    </div>
+    <div class="col-xs-4 text-center">
+      <%= link_to "Upcoming", {:controller => :upcomings, :action => :home, :method => :get}, {class: "navbar-font"} %>
+    </div>
+    <div class="col-xs-4 text-center">
+      <%= link_to "Artist", {:controller => :stages, :action => :home, :method => :get}, {class: "navbar-font"} %>
+    </div>
+  </div>
+</div>

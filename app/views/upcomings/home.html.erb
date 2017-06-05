@@ -1,0 +1,34 @@
+<!-- Top NavBar -->
+<div class="top-navbar">
+  <div class="text-center">
+    <p class="navbar-font">LIVLE</p>
+  </div>
+</div>
+
+<% @upcomings.each do |upcoming| %>
+    <div class="list-video">
+      <div class="background-video">
+        <img class="thumbnail-img" src="http://img.youtube.com/vi/<%= upcoming.youtube_id %>/maxresdefault.jpg"/>
+      </div>
+      <div class="descript-upcoming-video text-center">
+        <h1><%= upcoming.title %></h1>
+        <h2><%= upcoming.artist %></h2>
+      </div>
+      <a href="/upcomings/<%= upcoming.id %>/watch" class="btn-video" method="get"></a>
+    </div>
+<% end %>
+
+<!-- Bottom NavBar -->
+<div class="bottom-navbar">
+  <div class="row">
+    <div class="col-xs-4 text-center">
+      <%= link_to "Stage", {:controller => :stages, :action => :home, :method => :get}, {class: "navbar-font"} %>
+    </div>
+    <div class="col-xs-4 text-center">
+      <%= link_to "Upcoming", {:controller => :upcomings, :action => :home, :method => :get}, {class: "navbar-font"} %>
+    </div>
+    <div class="col-xs-4 text-center">
+      <%= link_to "Artist", {:controller => :stages, :action => :home, :method => :get}, {class: "navbar-font"} %>
+    </div>
+  </div>
+</div>
