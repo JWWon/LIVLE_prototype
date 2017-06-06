@@ -1,7 +1,7 @@
 class StagesController < ApplicationController
   def home
-    # DESC(역순) <-> ASC(원래)
-    @stages = Stage.paginate(page: params[:page]).order(created_at: :asc)
+    # DESC(역순) <-> ASC(원래) .order(created_at: :asc)
+    @stages = Stage.paginate(page: params[:page])
     respond_to do |format|
       format.html
       format.js { render 'stages/scroll_stage' }
