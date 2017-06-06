@@ -1,7 +1,7 @@
 class UpcomingsController < ApplicationController
   def home
     # DESC(역순) <-> ASC(원래)
-    @upcomings = Upcoming.paginate(page: params[:page]).order('created_at ASC')
+    @upcomings = Upcoming.paginate(page: params[:page]).order(created_at: :asc)
     respond_to do |format|
       format.html
       format.js { render 'upcomings/scroll_upcoming' }
