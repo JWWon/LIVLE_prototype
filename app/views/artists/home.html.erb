@@ -5,8 +5,16 @@
   </div>
 </div>
 
-<div style="background: #222222; width: 100%; padding-top: 100%; padding-bottom: 100%;">
-
+<div id="artists">
+  <% @artists.each do |artist| %>
+      <a href="/artists/<%= artist.id %>/list" method="get">
+        <div class="artist_background" style="background: url(<%= image_url("#{artist.image}") %>) no-repeat center center; background-size: cover;">
+          <div class="artist_name text-center">
+            <h1><%= artist.artist %></h1>
+          </div>
+        </div>
+      </a>
+  <% end %>
 </div>
 
 <!-- Bottom NavBar -->
@@ -23,3 +31,10 @@
     </div>
   </div>
 </div>
+
+<script>
+  var width = $(window).width();
+  var img_height = width/2;
+
+  $('.artist_background').css('height', img_height);
+</script>

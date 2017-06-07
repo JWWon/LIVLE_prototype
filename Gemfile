@@ -9,6 +9,10 @@ end
 gem 'jquery-rails'
 # Gem For Infinite Scroll
 gem 'will_paginate'
+# Gem For AWS S3
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+gem 'mini_magick'
+gem 'fog-aws'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
