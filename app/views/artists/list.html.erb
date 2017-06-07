@@ -1,2 +1,27 @@
-<h1>Artists#list</h1>
-<p>Find me in app/views/artists/list.html.erb</p>
+<!-- Top NavBar -->
+<div class="top-navbar">
+  <div class="row">
+    <div class="col-xs-2 text-center">
+      <%= link_to image_tag("icon_redirect@2x.png"), :controller => :artists, :action => :home, :method => :get %>
+    </div>
+    <div class="col-xs-offset-2 col-xs-4 text-center">
+      <p class="navbar-font">LIVLE</p>
+    </div>
+  </div>
+</div>
+
+<% @lists.each do |list| %>
+  <div class="list-video">
+    <div class="background-video">
+      <img class="thumbnail-img" src="http://img.youtube.com/vi/<%= list.youtube_id %>/maxresdefault.jpg"/>
+    </div>
+
+    <div class="descript-stage-video text-center">
+      <h1><%= list.title %></h1>
+      <h2><%= list.artist %></h2>
+      <h3>@<%= list.user_id %></h3>
+    </div>
+
+    <a href="/artists/<%= list.id %>/watch" class="btn-video" method="get"></a>
+  </div>
+<% end %>

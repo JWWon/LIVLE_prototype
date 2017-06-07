@@ -22,10 +22,19 @@ stages = Stage.create([
                           {title: 'What Do I Know', artist: 'Ed Sheeran', user_id: user, youtube_id: 'TTUQ8Idrowg', count_like: int_nil, count_view: int_nil, count_share: int_nil},
                           {title: 'Castle On The Hill', artist: 'Ed Sheeran', user_id: user, youtube_id: 'P2Q5VZlVOro', count_like: int_nil, count_view: int_nil, count_share: int_nil},
                           {title: 'Take me to church', artist: 'Ed Sheeran', user_id: user, youtube_id: 'oOPKDYuUzyw', count_like: int_nil, count_view: int_nil, count_share: int_nil},
+                          {title: 'Castle On The Hill', artist: 'Ed Sheeran', user_id: user, youtube_id: 'P2Q5VZlVOro', count_like: int_nil, count_view: int_nil, count_share: int_nil},
+                          {title: 'Drunk in love', artist: 'Ed Sheeran', user_id: user, youtube_id: 'dCsXSJPyAXU', count_like: int_nil, count_view: int_nil, count_share: int_nil},
+                          {title: 'Shape of you', artist: 'Ed Sheeran', user_id: user, youtube_id: 'jtZRe4jCFTU', count_like: int_nil, count_view: int_nil, count_share: int_nil},
                           {title: '마에스트로', artist: '창모', user_id: user, youtube_id: 'I7SAFOkr7x8', count_like: int_nil, count_view: int_nil, count_share: int_nil},
                           {title: '우주를 줄게', artist: '볼빨간 사춘기', user_id: user, youtube_id: '8lsSkgxXGOA', count_like: int_nil, count_view: int_nil, count_share: int_nil},
                           {title: 'Closer(Remix)', artist: 'The Chainsmokers', user_id: user, youtube_id: '602XJ4Uag_0', count_like: int_nil, count_view: int_nil, count_share: int_nil},
                           {title: 'Selfie', artist: 'The Chainsmokers', user_id: user, youtube_id: 'n82N97l4olk', count_like: int_nil, count_view: int_nil, count_share: int_nil},
+                          {title: 'Paris', artist: 'The Chainsmokers', user_id: user, youtube_id: 'jidwjOU7bYA', count_like: int_nil, count_view: int_nil, count_share: int_nil},
+                          {title: 'Break Up Every Night', artist: 'The Chainsmokers', user_id: user, youtube_id: 'bs6SEAt_Rv4', count_like: int_nil, count_view: int_nil, count_share: int_nil},
+                          {title: 'Don\'t Let Me Down', artist: 'The Chainsmokers', user_id: user, youtube_id: 'hHwPESc-O8c', count_like: int_nil, count_view: int_nil, count_share: int_nil},
+                          {title: 'Closer', artist: 'The Chainsmokers', user_id: user, youtube_id: 'KnLR6DfXI0s', count_like: int_nil, count_view: int_nil, count_share: int_nil},
+                          {title: 'All we know', artist: 'The Chainsmokers', user_id: user, youtube_id: 'RKRvwYlLgWA', count_like: int_nil, count_view: int_nil, count_share: int_nil},
+                          {title: 'Split', artist: 'The Chainsmokers', user_id: user, youtube_id: '615ISwdFvmI', count_like: int_nil, count_view: int_nil, count_share: int_nil},
                           {title: 'Something Just Like This', artist: 'Coldplay', user_id: user, youtube_id: '4u6bWs-ZG0o', count_like: int_nil, count_view: int_nil, count_share: int_nil}
                       ])
 

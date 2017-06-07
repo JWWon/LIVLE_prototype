@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'artists/home'
   get 'artists/:artist_id/list' => 'artists#list'
   get 'artists/add_artist'
+  get 'artists/:list_id/watch' => 'artists#watch'
 
   get 'upcomings/home'
   get 'upcomings/:upcoming_id/watch' => 'upcomings#watch'

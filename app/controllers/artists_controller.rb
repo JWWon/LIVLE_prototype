@@ -4,6 +4,12 @@ class ArtistsController < ApplicationController
   end
 
   def list
+    @artist = Artist.find(params[:artist_id])
+    @lists = Stage.where(artist: @artist.artist)
+  end
+
+  def watch
+    @list = Stage.find(params[:list_id])
   end
 
   def add_artist
