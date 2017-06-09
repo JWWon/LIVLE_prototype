@@ -1,6 +1,10 @@
 class ArtistsController < ApplicationController
   def home
-    @artists = Artist.all
+    @artists = Artist.paginate(page: params[:page], per_page: 24)
+    respond_to do |format|
+      format.html
+      format.js { render 'artists/scroll_artist' }
+    end
   end
 
   def list

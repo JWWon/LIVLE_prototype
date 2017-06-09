@@ -6,15 +6,11 @@
 </div>
 
 <div id="artists">
-  <% @artists.each do |artist| %>
-      <a href="/artists/<%= artist.id %>/list" method="get">
-        <div class="artist_background" style="background: url(<%= image_url("#{artist.image}") %>) no-repeat center center; background-size: cover;">
-          <div class="artist_name text-center">
-            <h1><%= artist.artist %></h1>
-          </div>
-        </div>
-      </a>
-  <% end %>
+  <%= render @artists %>
+</div>
+
+<div class="infinite-scrolling">
+  <%= will_paginate %>
 </div>
 
 <!-- Bottom NavBar -->
@@ -32,7 +28,7 @@
     </a>
     <a href="/artists/home" method="get">
       <div class="col-xs-4 text-center">
-        <p class="navbar-font">Artist</p>
+        <p class="navbar-font" style="color:#FF0000">Artist</p>
       </div>
     </a>
   </div>
