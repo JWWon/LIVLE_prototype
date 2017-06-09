@@ -16,14 +16,20 @@
 <!-- Bottom NavBar -->
 <div class="bottom-navbar">
   <div class="row">
-    <div class="col-xs-4 text-center">
-      <%= link_to "Stage", {:controller => :stages, :action => :home, :method => :get}, {class: "navbar-font"} %>
-    </div>
-    <div class="col-xs-4 text-center">
-      <%= link_to "Upcoming", {:controller => :upcomings, :action => :home, :method => :get}, {class: "navbar-font"} %>
-    </div>
-    <div class="col-xs-4 text-center">
-      <%= link_to "Artist", {:controller => :artists, :action => :home, :method => :get}, {class: "navbar-font"} %>
-    </div>
+    <a href="/stages/home" method="get">
+      <div class="col-xs-4 text-center">
+        <h2 class="navbar-font">Stage</h2>
+      </div>
+    </a>
+    <a href="/upcomings/home" method="get">
+      <div class="col-xs-4 text-center">
+        <h2 class="navbar-font">Upcoming</h2>
+      </div>
+    </a>
+    <a href="/artists/home" method="get">
+      <div class="col-xs-4 text-center">
+        <h2 class="navbar-font">Artist</h2>
+      </div>
+    </a>
   </div>
 </div>

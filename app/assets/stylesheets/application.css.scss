@@ -22,8 +22,8 @@
 
 .navbar-font {
   /*font-family: ;*/
-  font-size: 280%;
-  font-family: 'NanumsSquare', SansSerif;
+  font-size: 320%;
+  font-family: 'Bebas Neue', 'NanumsSquare';
   color: #FFFFFF;
   text-decoration: none !important;
 }
@@ -80,7 +80,8 @@
 }
 
 .list-video h1,
-.detail-container h1 {
+.detail-container h1,
+.artist_background h1 {
   color: #FFFFFF;
   font-size: 450% !important;
 }
@@ -138,7 +139,7 @@
 }
 
 .detail-buttons {
-  margin-top: -14%;
+  //margin-top: -14%;
   h3 {
     padding-left: 4%;
     color: #FF0000;
