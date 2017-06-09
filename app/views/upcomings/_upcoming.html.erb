@@ -1,10 +1,24 @@
 <div class="list-video">
   <div class="background-video">
     <img class="thumbnail-img" src="http://img.youtube.com/vi/<%= upcoming.youtube_id %>/maxresdefault.jpg"/>
+    <div id="list_<%= upcoming.id %>"></div>
   </div>
+
   <div class="descript-upcoming-video text-center">
     <h1><%= upcoming.title %></h1>
     <h2><%= upcoming.artist %></h2>
   </div>
+
   <a href="/upcomings/<%= upcoming.id %>/watch" class="btn-video" method="get"></a>
 </div>
+
+<style>
+  #list_<%= upcoming.id %> {
+    filter: grayscale(65%);
+    /*background: #000000;*/
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+  }
+</style>
