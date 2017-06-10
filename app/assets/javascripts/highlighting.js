@@ -7,8 +7,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
         var cur_point = $window.scrollTop() + $window.height()/2; //가운데 지점 위치
         var pos_num = Math.floor(cur_point / content_height) + 1; //n번째 컨텐츠
 
-        console.log("cur position : " + pos_num);
-        console.log("window size : " + $('#list-container').height())
+        // console.log("cur position : " + pos_num);
+        // console.log("window size : " + $('#list-container').height())
 
         // 블러효과 처리
         $("#list_"+(pos_num-2)).css('background', 'rgba(0, 0, 0, 0.65)');

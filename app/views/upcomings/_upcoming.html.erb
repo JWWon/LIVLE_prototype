@@ -1,10 +1,12 @@
 <div class="list-video">
   <div class="background-video">
     <img class="thumbnail-img" src="http://img.youtube.com/vi/<%= upcoming.youtube_id %>/maxresdefault.jpg"/>
-
   </div>
 
   <div class="descript-upcoming-video text-center">
+    <div class="d-day-container">
+      <p id="upcoming-day-<%= upcoming.id %>">D-day</p>
+    </div>
     <h1><%= upcoming.title %></h1>
     <h2><%= upcoming.artist %></h2>
     <div id="list_<%= upcoming.id %>"></div>
@@ -22,4 +24,25 @@
     width: 100%;
     height: 100%;
   }
+
+  #upcoming-day-<%= upcoming.id %> {
+    color: #FF0000;
+    font-size: 320%;
+    font-family: "Bebas Neue", 'NanumsSquare';
+  }
 </style>
+
+<script>
+  var date_arr = ("<%= upcoming.d_day %>").split('-');
+  var date = new Date(date_arr[0], date_arr[1]-1, date_arr[2]);
+  var cur_time = new Date();
+
+  var date_milsec = date.getTime();
+  var today_milsec = cur_time.getTime();
+  var day = 1000*60*60*24; //밀리세컨*초*분*시간
+
+  var d_day = Math.floor((date_milsec - today_milsec)/day); //D_Day
+
+  //HTML에 정보 입력
+  $('#upcoming-day-<%= upcoming.id %>').text("D-" + d_day);
+</script>
