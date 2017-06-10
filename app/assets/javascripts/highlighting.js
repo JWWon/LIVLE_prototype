@@ -11,9 +11,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
         console.log("window size : " + $('#list-container').height())
 
         // 블러효과 처리
+        $("#list_"+(pos_num-2)).css('background', 'rgba(0, 0, 0, 0.65)');
         $("#list_"+(pos_num-1)).css('background', 'rgba(0, 0, 0, 0.65)');
         $("#list_"+pos_num).css('background', 'none');
         $("#list_"+(pos_num+1)).css('background', 'rgba(0, 0, 0, 0.65)');
+        $("#list_"+(pos_num+2)).css('background', 'rgba(0, 0, 0, 0.65)');
     });
 
 });
