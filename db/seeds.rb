@@ -37,8 +37,8 @@ stages = Stage.create([
 rplace = '한강난지공원'
 # Upcoming seeds
 upcomings = Upcoming.create([
-                                {title: '국카스텐 콘서트', artist: '국카스텐', youtube_id: 'vxd3HFNLlZM', d_day: '2017.07.08', place: rplace, ticket_link: 'http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GroupCode=17007302'},
-                                {title: '알쌈 콘서트', artist: 'Crush', youtube_id: '9_i3WU-rG8c', d_day: '2017.6.24', place: rplace, ticket_link: 'http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GroupCode=17007166'},
+                                {title: '국카스텐 콘서트', artist: '국카스텐', youtube_id: 'vxd3HFNLlZM', d_day: '2017.07.08', place: rplace, ticket_link: 'http://mticket.interpark.com/Goods/GoodsInfo/info?GoodsCode=17007302&app_tapbar_state=fix'},
+                                {title: '알쌈 콘서트', artist: 'Crush', youtube_id: '9_i3WU-rG8c', d_day: '2017.6.24', place: rplace, ticket_link: 'http://mticket.interpark.com/Goods/GoodsInfo/info?GoodsCode=17007166&app_tapbar_state=fix'},
                                 {title: '어반뮤직페스티벌', artist: '프롬', youtube_id: 'TBDsMLAWMvM', d_day: '2017.07.22', place: rplace, ticket_link: 'http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GroupCode=17007287'},
                                 {title: '어반뮤직페스티벌', artist: '정승환', youtube_id: 'goU0uikyTik', d_day: '2017.07.22', place: rplace, ticket_link: 'http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GroupCode=17007287'},
                                 {title: 'NBA buzzer beat festival', artist: '창모', youtube_id: 'I7SAFOkr7x8', d_day: '2017.07.08', place: rplace, ticket_link: 'http://www.ticketlink.co.kr/product/16277'},
@@ -51,5 +51,7 @@ upcomings = Upcoming.create([
                                 {title: '전주얼티밋뮤직페스티벌', artist: '서사무엘', youtube_id: 'dTlH1zUwri8', d_day: '2017.08.04', place: rplace, ticket_link: 'http://ticket.melon.com/performance/index.htm?prodId=200614'},
                                 {title: '어반뮤직페스티벌', artist: '권진아', youtube_id: 'v9llEUD5Ew0', d_day: '2017.07.22', place: rplace, ticket_link: 'http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GroupCode=17007287'},
                                 {title: '어반뮤직페스티벌', artist: '치즈', youtube_id: 'NQQhd5X_njQ', d_day: '2017.07.22', place: rplace, ticket_link: 'http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GroupCode=17007287'},
-                                {title: '지산 밸리록 뮤직앤드아츠 페스티벌', artist: '라이프앤타임', youtube_id: 'eLTdTkicioQ', d_day: '2017.07.28', place: rplace, ticket_link: 'http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GroupCode=17004843'}
+                                {title: '지산 밸리록 뮤직앤드아츠 페스티벌', artist: '라이프앤타임', youtube_id: 'eLTdTkicioQ', d_day: '2017.07.28', place: rplace, ticket_link: 'http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GroupCode=17004843'},
+                                {title: 'NBA buzzer beat festival', artist: '자이언티', youtube_id: 'e2URGNihN2A', d_day: '2017.07.28', place: rplace, ticket_link: 'http://www.ticketlink.co.kr/product/16277'},
+                                {title: '전주얼티밋뮤직페스티벌', artist: '엠씨더맥스', youtube_id: 'kCu2YKCCbjk', d_day: '2017.08.04', place: rplace, ticket_link: 'http://ticket.melon.com/performance/index.htm?prodId=200614'}
                             ])

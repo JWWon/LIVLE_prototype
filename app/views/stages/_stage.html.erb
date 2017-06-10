@@ -1,13 +1,14 @@
 <div class="list-video">
   <div class="background-video">
     <img class="thumbnail-img" src="http://img.youtube.com/vi/<%= stage.youtube_id %>/maxresdefault.jpg"/>
-    <div id="list_<%= stage.id %>"></div>
+
   </div>
 
   <div class="descript-stage-video text-center">
     <h1><%= stage.title %></h1>
     <h2><%= stage.artist %></h2>
     <h3>@<%= stage.user_id %></h3>
+    <div id="list_<%= stage.id %>"></div>
   </div>
 
   <a href="/stages/<%= stage.id %>/watch" class="btn-video" method="get"></a>
@@ -15,11 +16,11 @@
 
 <style>
   #list_<%= stage.id %> {
+    position: absolute;
+    top: 0;
     filter: grayscale(65%);
-    /*background: #000000;*/
-    background-size: cover;
+    background: rgba(0, 0, 0, 0.65);
     width: 100%;
     height: 100%;
-    z-index: 99;
   }
 </style>

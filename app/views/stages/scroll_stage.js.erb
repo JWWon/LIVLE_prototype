@@ -1,4 +1,4 @@
-$('#stages').append('<%= j render @stages %>');
+$('#list-container').append('<%= j render @stages %>');
 <% if @stages.next_page %>
   $('.pagination').replaceWith('<%= j will_paginate @stages %>');
 <% else %>

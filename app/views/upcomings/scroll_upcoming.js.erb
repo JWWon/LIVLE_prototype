@@ -1,4 +1,4 @@
-$('#upcomings').append('<%= j render @upcomings %>');
+$('#list-container').append('<%= j render @upcomings %>');
 <% if @upcomings.next_page %>
   $('.pagination').replaceWith('<%= j will_paginate @upcomings %>');
 <% else %>

@@ -1,4 +1,4 @@
-$('#artists').append('<%= j render @artists %>');
+$('#list-container').append('<%= j render @artists %>');
 <% if @artists.next_page %>
   $('.pagination').replaceWith('<%= j will_paginate @artists %>');
 <% else %>

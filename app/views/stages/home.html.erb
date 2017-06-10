@@ -5,7 +5,7 @@
   </div>
 </div>
 
-<div id="stages">
+<div id="list-container">
   <%= render @stages %>
 </div>
 
@@ -14,6 +14,14 @@
 </div>
 
 <!-- Bottom NavBar -->
+<div class="bottom-status">
+  <div class="text-center">
+    <%= image_tag('icon_circle_full@2x.png', :style => "width: 4%; height: auto; padding: 1%;") %>
+    <%= image_tag('icon_circle_empty@x2.png', :style => "width: 3.5%; height: auto; padding: 1%;") %>
+    <%= image_tag('icon_circle_empty@x2.png', :style => "width: 3.5%; height: auto; padding: 1%;") %>
+  </div>
+</div>
+
 <div class="bottom-navbar">
   <div class="row">
     <a href="/stages/home" method="get">
