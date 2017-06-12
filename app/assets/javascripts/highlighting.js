@@ -30,13 +30,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
                     //0.02 초마다 현재 위치 업데이트
                     check_position();
                     console.log("position updated");
-                }, 20);
+                }, 10);
 
                 clearTimeout(timer);
                 timer = setTimeout(function() {
                     clearInterval(interval); // stop the interval
                     console.log("interval cleared");
-                }, 1000);
+                }, 800);
             })
         } else {
             console.log("desktop");
