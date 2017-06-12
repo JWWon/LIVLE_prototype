@@ -42,7 +42,7 @@ upcomings = Upcoming.create([
                                 {title: '어반뮤직페스티벌', artist: '프롬', youtube_id: 'TBDsMLAWMvM', d_day: '2017.07.22', place: rplace, ticket_link: 'http://mticket.interpark.com/Goods/GoodsInfo/info?GoodsCode=17007287'},
                                 {title: '어반뮤직페스티벌', artist: '정승환', youtube_id: 'goU0uikyTik', d_day: '2017.07.22', place: rplace, ticket_link: 'http://mticket.interpark.com/Goods/GoodsInfo/info?GoodsCode=17007287'},
                                 {title: 'NBA buzzer beat festival', artist: '창모', youtube_id: 'I7SAFOkr7x8', d_day: '2017.07.08', place: rplace, ticket_link: 'http://www.ticketlink.co.kr/product/16277'},
-                                {title: '로이킴 라이브 투어', artist: '로이킴', youtube_id: 'HDAQ158hkI8', d_day: '2017.06.24', place: rplace, ticket_link: 'http://ticket.interpark.com/Ticket/Goods/GoodsInfo.asp?GroupCode=17006010'},
+                                {title: '로이킴 라이브 투어', artist: '로이킴', youtube_id: 'HDAQ158hkI8', d_day: '2017.06.24', place: rplace, ticket_link: 'http://mticket.interpark.com/Goods/GoodsInfo/info?GoodsCode=17006010'},
                                 {title: 'Planting day', artist: '박효신', youtube_id: 'QYu8lS0XqC8', d_day: '2017.6.24', place: rplace, ticket_link: 'http://ticket.melon.com/performance/index.htm?prodId=200654'},
                                 {title: '전주얼티밋뮤직페스티벌', artist: '넬', youtube_id: '83IfZhO4Pd0', d_day: '2017.08.04', place: rplace, ticket_link: 'http://ticket.melon.com/performance/index.htm?prodId=200614'},
                                 {title: '전주얼티밋뮤직페스티벌', artist: '10cm', youtube_id: 'RkbTZi3OFUE', d_day: '2017.08.04', place: rplace, ticket_link: 'http://ticket.melon.com/performance/index.htm?prodId=200614'},
