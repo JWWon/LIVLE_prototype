@@ -16,19 +16,34 @@ document.addEventListener("DOMContentLoaded", function(event) {
         // If platform === mobile
         if (mobilecheck()) {
             console.log("mobile");
+            var timer = null;
+            var interval = null;
+            $(document).bind('touchstart', function(e) {
+                clearInterval(interval);
+                clearTimeout(timer);
+            })
             $(document).bind('touchmove', function(e) {
                 check_position();
             });
+            $(document).bind('touchend', function (e) {
+                interval = setInterval(function() {
+                    //0.02 초마다 현재 위치 업데이트
+                    check_position();
+                    console.log("position updated");
+                }, 20);
+
+                clearTimeout(timer);
+                timer = setTimeout(function() {
+                    clearInterval(interval); // stop the interval
+                    console.log("interval cleared");
+                }, 1000);
+            })
         } else {
             console.log("desktop");
             $(window).scroll(function() {
                 check_position();
             });
         }
-        setInterval(function() {
-            //0.1 초마다 현재 위치 업데이트
-            check_position();
-        }, 100);
     }
 
     var content_height = $(".background-video").height(); //컨텐츠 높이
