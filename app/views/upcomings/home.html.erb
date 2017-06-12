@@ -14,29 +14,29 @@
 </div>
 
 <!-- Bottom NavBar -->
-<div class="bottom-status">
-  <div class="text-center">
-    <%= image_tag('icon_circle_empty@x2.png', :style => "width: 3.5%; height: auto; padding: 1%;") %>
-    <%= image_tag('icon_circle_full@2x.png', :style => "width: 4%; height: auto; padding: 1%;") %>
-    <%= image_tag('icon_circle_empty@x2.png', :style => "width: 3.5%; height: auto; padding: 1%;") %>
-  </div>
-</div>
-
 <div class="bottom-navbar">
+  <div class="bottom-status">
+    <div class="text-center">
+      <%= image_tag('icon_circle_empty@x2.png', :style => "width: 3.5%; height: auto; padding: 1%;") %>
+      <%= image_tag('icon_circle_full@2x.png', :style => "width: 4%; height: auto; padding: 1%;") %>
+      <%= image_tag('icon_circle_empty@x2.png', :style => "width: 3.5%; height: auto; padding: 1%;") %>
+    </div>
+  </div>
+
   <div class="row">
     <a href="/stages/home" method="get">
       <div class="col-xs-4 text-center">
-        <p class="navbar-font">Stage</p>
+        <p class="navbar-font" style="padding: 2%;">Stage</p>
       </div>
     </a>
     <a href="/upcomings/home" method="get">
       <div class="col-xs-4 text-center">
-        <p class="navbar-font" style="color:#FF0000">Upcoming</p>
+        <p class="navbar-font" style="color:#FF0000; padding: 2%;">Upcoming</p>
       </div>
     </a>
     <a href="/artists/home" method="get">
       <div class="col-xs-4 text-center">
-        <p class="navbar-font">Artist</p>
+        <p class="navbar-font" style="padding: 2%;">Artist</p>
       </div>
     </a>
   </div>
