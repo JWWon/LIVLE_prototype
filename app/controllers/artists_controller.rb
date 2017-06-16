@@ -8,17 +8,15 @@ class ArtistsController < ApplicationController
   end
 
   def list
-    @artist = Artist.find(params[:artist_id])
+    set_artist
     @lists = Stage.where(artist: @artist.artist)
   end
 
-  def watch
-    @list = Stage.find(params[:list_id])
+  def edit_artist
+    @artists = Artist.all
   end
 
-  def add_artist
-  end
-
+  # Artist CRUD
   def upload_image
     @artist = Artist.create(artist: params[:artist], image: params[:image])
 
@@ -28,4 +26,27 @@ class ArtistsController < ApplicationController
       render text: @artist.errors.messages
     end
   end
+  def update_artist
+    set_artist
+
+    if @artist.update(artist: params[:artist], image: params[:image])
+      redirect_back(fallback_location: root_path)
+    else
+      render text: @stage.errors.messages
+    end
+  end
+  def destroy_artist
+    set_artist
+
+    if @artist.destroy
+      redirect_back(fallback_location: root_path)
+    else
+      render text: @stage.errors.messages
+    end
+  end
+
+  private
+    def set_artist
+      @artist = Artist.find(params[:artist_id])
+    end
 end

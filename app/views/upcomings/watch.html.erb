@@ -1,4 +1,4 @@
-<div style="background: url(http://img.youtube.com/vi/<%= @upcoming.youtube_id %>/maxresdefault.jpg) no-repeat center center;
+<div style="background: url(http://img.youtube.com/vi/<%= @upcoming.video_url %>/maxresdefault.jpg) no-repeat center center;
     width: auto; height: 100%; overflow-y: hidden; background-size: cover;">
   <div class="detail-container">
     <!-- Top NavBar -->
@@ -18,8 +18,8 @@
     <hr>
     <!-- YOUTUBE VEDIO -->
     <div class="list-video">
-      <iframe class="background-video" src='https://www.youtube.com/embed/<%= @upcoming.youtube_id
-      %>?rel=0&modestbranding=1&showinfo=0&loop=1&autoplay=1&playlist=<%= @upcoming.youtube_id
+      <iframe class="background-video" src='https://www.youtube.com/embed/<%= @upcoming.video_url
+      %>?rel=0&modestbranding=1&showinfo=0&loop=1&autoplay=1&playlist=<%= @upcoming.video_url
       %>' frameborder='0' allowfullscreen></iframe>
     </div>
 

@@ -1,6 +1,6 @@
 <div class="list-video">
   <div class="background-video">
-    <img class="thumbnail-img" src="http://img.youtube.com/vi/<%= upcoming.youtube_id %>/maxresdefault.jpg"/>
+    <img class="thumbnail-img" id="img_<%= upcoming.id %>"/>
   </div>
 
   <div class="descript-upcoming-video text-center">
@@ -12,7 +12,7 @@
     <div id="list_<%= upcoming.id %>"></div>
   </div>
 
-  <a href="/upcomings/<%= upcoming.id %>/watch" class="btn-video" method="get"></a>
+  <a href="/upcomings/<%= upcoming.upcoming_token %>/watch" class="btn-video" method="get"></a>
 </div>
 
 <style>
@@ -45,4 +45,10 @@
 
   //HTML에 정보 입력
   $('#upcoming-day-<%= upcoming.id %>').text("D-" + d_day);
+
+  if(<%= upcoming.is_youtube %>)
+      $('#img_<%= upcoming.id %>').attr({
+          src: "http://img.youtube.com/vi/<%= upcoming.video_url %>/maxresdefault.jpg"
+      });
+  // else -> youtube가 아니라 S3일때 경우 처리
 </script>

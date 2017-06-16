@@ -1,11 +1,11 @@
-<div style="background: url(http://img.youtube.com/vi/<%= @stage.youtube_id %>/maxresdefault.jpg) no-repeat center center;
+<div style="background: url(http://img.youtube.com/vi/<%= @stage.video_url %>/maxresdefault.jpg) no-repeat center center;
     width: auto; height: 100%; overflow-y: hidden; background-size: cover;">
   <div class="detail-container">
     <!-- Top NavBar -->
     <div class="top-navbar">
       <div class="row">
         <div class="col-xs-2 text-center">
-          <%= link_to image_tag("icon_redirect@2x.png"), :controller => :stages, :action => :home, :method => :get %>
+          <%= link_to image_tag("icon_redirect@2x.png"), :back %>
         </div>
         <div class="col-xs-offset-2 col-xs-4 text-center">
           <%= image_tag("icon_recording@2x.png", :style => "display: inline-block; margin-top: -6%;") %>
@@ -14,12 +14,11 @@
       </div>
     </div>
 
-
     <hr>
     <!-- YOUTUBE VEDIO -->
     <div class="list-video">
-      <iframe class="background-video" src='https://www.youtube.com/embed/<%= @stage.youtube_id
-      %>?rel=0&modestbranding=1&showinfo=0&loop=1&autoplay=1&playlist=<%= @stage.youtube_id
+      <iframe class="background-video" src='https://www.youtube.com/embed/<%= @stage.video_url
+      %>?rel=0&modestbranding=1&showinfo=0&loop=1&autoplay=1&playlist=<%= @stage.video_url
       %>' frameborder='0' allowfullscreen></iframe>
     </div>
 

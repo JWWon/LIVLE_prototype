@@ -12,12 +12,13 @@ class StagesController < ApplicationController
     set_stage
   end
 
-  def add_stage
+  # stage db CRUD
+  def edit_stage
+    @stages = Stage.all
   end
 
-  # stage db CREATE
   def create_stage
-    @stage = Stage.create(title: params[:title], artist: params[:artist], user_id: params[:user_id], youtube_id: params[:youtube_id], count_like: params[:count_like], count_share: params[:count_share], count_view: params[:count_view])
+    @stage = Stage.create(title: params[:title], artist: params[:artist], user_id: params[:user_id], is_youtube: true, video_url: params[:video_url], count_like: params[:count_like], count_share: params[:count_share], count_view: params[:count_view])
 
     if @stage.save
       redirect_back(fallback_location: root_path)
@@ -26,8 +27,28 @@ class StagesController < ApplicationController
     end
   end
 
-  private
-  def set_stage
-    @stage = Stage.find(params[:stage_id])
+  def update_stage
+    set_stage
+
+    if @stage.update(title: params[:title], artist: params[:artist], user_id: params[:user_id], video_url: params[:video_url])
+      redirect_back(fallback_location: root_path)
+    else
+      render text: @stage.errors.messages
+    end
   end
+
+  def destroy_stage
+    set_stage
+
+    if @stage.destroy
+      redirect_back(fallback_location: root_path)
+    else
+      render text: @stage.errors.messages
+    end
+  end
+
+  private
+    def set_stage
+      @stage = Stage.find_by(stage_token: params[:stage_token])
+    end
 end

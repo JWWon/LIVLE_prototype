@@ -1,6 +1,6 @@
 <div class="list-video">
   <div class="background-video">
-    <img class="thumbnail-img" src="http://img.youtube.com/vi/<%= stage.youtube_id %>/maxresdefault.jpg"/>
+    <img class="thumbnail-img" id="img_<%= stage.id %>"/>
 
   </div>
 
@@ -11,7 +11,7 @@
     <div id="list_<%= stage.id %>"></div>
   </div>
 
-  <a href="/stages/<%= stage.id %>/watch" class="btn-video" method="get"></a>
+  <a href="/stages/<%= stage.stage_token %>/watch" class="btn-video" method="get"></a>
 </div>
 
 <style>
@@ -24,3 +24,11 @@
     height: 100%;
   }
 </style>
+
+<script type="text/javascript" charset="utf-8">
+  if(<%= stage.is_youtube %>)
+      $('#img_<%= stage.id %>').attr({
+          src: "http://img.youtube.com/vi/<%= stage.video_url %>/maxresdefault.jpg"
+      });
+  // else -> youtube가 아니라 S3일때 경우 처리
+</script>

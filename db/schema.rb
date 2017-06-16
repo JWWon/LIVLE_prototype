@@ -20,26 +20,32 @@ ActiveRecord::Schema.define(version: 20170607181835) do
   end
 
   create_table "stages", force: :cascade do |t|
+    t.string "stage_token"
     t.string "title"
     t.string "artist"
     t.string "user_id"
-    t.string "youtube_id"
+    t.boolean "is_youtube"
+    t.string "video_url"
     t.integer "count_like"
     t.integer "count_view"
     t.integer "count_share"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["stage_token"], name: "index_stages_on_stage_token", unique: true
   end
 
   create_table "upcomings", force: :cascade do |t|
+    t.string "upcoming_token"
     t.string "title"
     t.string "artist"
-    t.string "youtube_id"
+    t.boolean "is_youtube"
+    t.string "video_url"
     t.date "d_day"
     t.string "place"
     t.string "ticket_link"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["upcoming_token"], name: "index_upcomings_on_upcoming_token", unique: true
   end
 
 end

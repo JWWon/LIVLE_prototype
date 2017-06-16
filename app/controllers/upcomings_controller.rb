@@ -12,12 +12,13 @@ class UpcomingsController < ApplicationController
     set_upcoming
   end
 
-  def add_upcoming
+  # upcoming db CRUD
+  def edit_upcoming
+    @upcomings = Upcoming.all
   end
 
-  # upcoming db CREATE
   def create_upcoming
-    @upcoming = Upcoming.create(title: params[:title], artist: params[:artist], youtube_id: params[:youtube_id], d_day: params[:d_day], place: params[:place], ticket_link: params[:ticket_link])
+    @upcoming = Upcoming.create(title: params[:title], artist: params[:artist], is_youtube: true, video_url: params[:video_url], d_day: params[:d_day], place: params[:place], ticket_link: params[:ticket_link])
 
     if @upcoming.save
       redirect_back(fallback_location: root_path)
@@ -26,8 +27,28 @@ class UpcomingsController < ApplicationController
     end
   end
 
+  def update_upcoming
+    set_upcoming
+
+    if @upcoming.update(title: params[:title], artist: params[:artist], video_url: params[:video_url], d_day: params[:d_day], place: params[:place], ticket_link: params[:ticket_link])
+      redirect_back(fallback_location: root_path)
+    else
+      render text: @upcoming.errors.message
+    end
+  end
+
+  def destroy_upcoming
+    set_upcoming
+
+    if @upcoming.destroy
+      redirect_back(fallback_location: root_path)
+    else
+      render text: @upcoming.errors.message
+    end
+  end
+
   private
     def set_upcoming
-      @upcoming = Upcoming.find(params[:upcoming_id])
+      @upcoming = Upcoming.find_by(upcoming_token: params[:upcoming_token])
     end
 end

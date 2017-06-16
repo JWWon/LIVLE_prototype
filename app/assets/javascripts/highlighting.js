@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function(event) {
-    $("#list_"+ 2).css('background', 'none');
+    var content_height = $(".background-video").height(); //컨텐츠 높이
     var check_position = function() {
         var cur_point = $(window).scrollTop() + $(window).height()/2; //가운데 지점 위치
         var pos_num = Math.floor(cur_point / content_height) + 1; //n번째 컨텐츠
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             });
             $(document).bind('touchend', function (e) {
                 interval = setInterval(function() {
-                    //0.02 초마다 현재 위치 업데이트
+                    //0.01 초마다 현재 위치 업데이트
                     check_position();
                     console.log("position updated");
                 }, 10);
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         }
     }
 
-    var content_height = $(".background-video").height(); //컨텐츠 높이
+    $("#list_"+ 2).css('background', 'none');
     filter_event();
 
     new ResizeSensor(jQuery('#list-container'), function() {

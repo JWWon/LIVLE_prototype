@@ -1,0 +1,79 @@
+<div class="container" style="margin-top: 30px">
+  <p>####리스트 추가####</p>
+  <form action="/stages/create_stage" id="stage_create" method="post">
+    <div class="form-group">
+      <input type="text" class="form-control" name="title" placeholder="노래 이름">
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" name="artist" placeholder="아티스트">
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" name="user_id" placeholder="유저 아이디">
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" name="video_url" placeholder="동영상 KEY">
+    </div>
+    <div class="form-group">
+      <input type="hidden" class="form-control" name="count_like" value=0>
+    </div>
+    <div class="form-group">
+      <input type="hidden" class="form-control" name="count_share" value=0>
+    </div>
+    <div class="form-group">
+      <input type="hidden" class="form-control" name="count_view" value=0>
+    </div>
+    <button type="submit" class="btn btn-default" id="stage_create">추가하기</button>
+  </form>
+  <hr>
+
+  <div class="row">
+    <!-- 제목 -->
+    <div class="text-center" style="width:5%; display:inline-block;">번호</div>
+    <div class="text-center" style="width:30%; display:inline-block;">노래이름</div>
+    <div class="text-center" style="width:16%; display:inline-block;">아티스트</div>
+    <div class="text-center" style="width:10%; display:inline-block;">User ID</div>
+    <div class="text-center" style="width:14%; display:inline-block;">Video KEY</div>
+    <div class="text-center" style="width:4%; display:inline-block;">Like</div>
+    <div class="text-center" style="width:4%; display:inline-block;">Share</div>
+    <div class="text-center" style="width:4%; display:inline-block;">View</div>
+    <div class="text-center" style="width:9%; display:inline-block;"></div>
+    <hr>
+
+    <% @stages.each do |stage| %>
+      <form action="/stages/<%= stage.stage_token %>/update_stage" id="stage_<%= stage.id %>" method="get">
+        <div class="text-center" style="width:5%; display:inline-block;"><%= stage.id %></div>
+        <div class="form-group" style="width:30%; display:inline-block;">
+          <input type="text" class="form-control" name="title" value="<%= stage.title %>">
+        </div>
+        <div class="form-group" style="width:16%; display:inline-block;">
+          <input type="text" class="form-control" name="artist" value="<%= stage.artist %>">
+        </div>
+        <div class="form-group" style="width:10%; display:inline-block;">
+          <input type="text" class="form-control" name="user_id" value="<%= stage.user_id %>">
+        </div>
+        <div class="form-group" style="width:14%; display:inline-block;">
+          <input type="text" class="form-control" name="video_url" value="<%= stage.video_url %>">
+        </div>
+        <div class="text-center" style="width:4%; display:inline-block;">
+          <!--<input type="text" class="form-control" name="title" value="">-->
+          <%= stage.count_like %>
+        </div>
+        <div class="text-center" style="width:4%; display:inline-block;">
+          <!--<input type="text" class="form-control" name="title" value="">-->
+          <%= stage.count_share %>
+        </div>
+        <div class="text-center" style="width:4%; display:inline-block;">
+          <!--<input type="text" class="form-control" name="title" value="">-->
+          <%= stage.count_view %>
+        </div>
+        <div class="text-center" style="width:6%; display:inline-block;">
+          <button type="submit" class="btn btn-default" id="stage_<%= stage.id %>">수정</button>
+        </div>
+        <div class="text-center" style="width:3%; display:inline-block;">
+          <a href="/stages/<%= stage.stage_token %>/destroy_stage" method="get">삭제</a>
+        </div>
+      </form>
+      <hr>
+    <% end %>
+  </div>
+</div>
