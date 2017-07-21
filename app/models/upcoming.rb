@@ -1,4 +1,4 @@
 class Upcoming < ApplicationRecord
-  # self.per_page = 15
   has_secure_token :upcoming_token
+  # self.primary_key = 'upcoming_token'
 end

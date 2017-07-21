@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  # resources :stages, param: :stage_token
+  # resources :upcomings, param: :upcoming_token
+
   root 'stages#home'
 
   get 'stages/home'

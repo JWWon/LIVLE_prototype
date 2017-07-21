@@ -1,6 +1,6 @@
 class Stage < ApplicationRecord
-  # self.per_page = 15
   has_secure_token :stage_token
+  # self.primary_key = 'stage_token'
 
   # validates :title, acceptance: { message: "노래 이름이 있어야 합니다" }
   # validates :artist, acceptance: { message: "가수 이름이 있어야 합니다" }
