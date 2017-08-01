@@ -14,44 +14,44 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     var filter_event = function() {
         // If platform === mobile
-        if (mobilecheck()) {
-            console.log("mobile");
-            var timer = null;
-            var interval = null;
-            $(document).bind('touchstart', function(e) {
-                clearInterval(interval);
-                clearTimeout(timer);
-            })
-            $(document).bind('touchmove', function(e) {
-                check_position();
-            });
-            $(document).bind('touchend', function (e) {
-                interval = setInterval(function() {
-                    //0.01 초마다 현재 위치 업데이트
-                    check_position();
-                    console.log("position updated");
-                }, 10);
-
-                clearTimeout(timer);
-                timer = setTimeout(function() {
-                    clearInterval(interval); // stop the interval
-                    console.log("interval cleared");
-                }, 800);
-            })
-        } else {
-            console.log("desktop");
-            $(window).scroll(function() {
-                check_position();
-            });
-        }
+        // if (mobilecheck()) {
+        //     console.log("mobile");
+        //     var timer = null;
+        //     var interval = null;
+        //     $(document).bind('touchstart', function(e) {
+        //         clearInterval(interval);
+        //         clearTimeout(timer);
+        //     })
+        //     $(document).bind('touchmove', function(e) {
+        //         check_position();
+        //     });
+        //     $(document).bind('touchend', function (e) {
+        //         interval = setInterval(function() {
+        //             //0.01 초마다 현재 위치 업데이트
+        //             check_position();
+        //             console.log("position updated");
+        //         }, 10);
+        //
+        //         clearTimeout(timer);
+        //         timer = setTimeout(function() {
+        //             clearInterval(interval); // stop the interval
+        //             console.log("interval cleared");
+        //         }, 800);
+        //     })
+        // } else {
+        //     console.log("desktop");
+        //     $(window).scroll(function() {
+        //         check_position();
+        //     });
+        // }
     }
 
     $("#list_"+ 2).css('background', 'none');
-    filter_event();
+    // filter_event();
 
     new ResizeSensor(jQuery('#list-container'), function() {
         console.log('list updated');
-        filter_event();
+        // filter_event();
     });
 });
 

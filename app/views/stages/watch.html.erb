@@ -47,11 +47,11 @@
 
     <div class="detail-buttons">
       <div class="row">
-        <div class="col-xs-6 text-center">
+        <div class="col-xs-6 text-center" id="watch-like">
           <%= image_tag("icon_heart@2x.png", :class => "display-horizon", :style => "margin-top: -13%;") %>
           <h3 class="display-horizon">Like</h3>
         </div>
-        <div class="col-xs-6 text-center">
+        <div class="col-xs-6 text-center" id="watch-share">
           <%= image_tag("icon_share@2x.png", :class => "display-horizon", :style => "margin-top: -16%;") %>
           <h3 class="display-horizon">Share</h3>
         </div>
@@ -59,3 +59,15 @@
     </div>
   </div>
 </div>
+
+<script>
+  $('#watch-like').click(function () {
+      ga('send', 'event', "button", "Click", "like", 0);
+      console.log("like clicked!!!");
+  });
+
+  $('#watch-share').click(function () {
+      ga('send', 'event', "button", "Click", "share", 0);
+      console.log("share clicked!!!");
+  });
+</script>
