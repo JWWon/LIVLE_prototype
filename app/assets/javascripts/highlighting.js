@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         $("#list_"+(pos_num+2)).css('background', 'rgba(0, 0, 0, 0.65)');
     }
 
-    var filter_event = function() {
+    // var filter_event = function() {
         // If platform === mobile
         // if (mobilecheck()) {
         //     console.log("mobile");
@@ -44,10 +44,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
         //         check_position();
         //     });
         // }
-        $(window).scroll(function() {
-            check_position();
-        });
-    }
+    // }
+    $(window).scroll(function() {
+        check_position();
+    });
 
     $("#list_"+ 2).css('background', 'none');
     // filter_event();
@@ -55,6 +55,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
     new ResizeSensor(jQuery('#list-container'), function() {
         console.log('list updated');
         // filter_event();
+        $(window).scroll(function() {
+            check_position();
+        });
     });
 });
 
