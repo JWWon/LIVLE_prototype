@@ -30,8 +30,8 @@
           <h4>#<%= @upcoming.d_day %>  #<%= @upcoming.place %></h4>
         </div>
         <div class="col-xs-offset-3 col-xs-3 ticket-place">
-          <a href="javascript:redir('Click Eternal Link', 'Click', 'google.com/analytics', 0, 'http://www.google.com/analytics' )">
-            <%= link_to image_tag("icon_ticket@2x.png"), @upcoming.ticket_link %>
+          <a href="javascript:redir('a', 'Click', 'ticket_link', 0, '<%= @upcoming.ticket_link %>' )">
+            <%= image_tag("icon_ticket@2x.png") %>
           </a>
         </div>
       </div>
