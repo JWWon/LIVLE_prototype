@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   root 'stages#home'
 
-  get 'stages/home'
+  get 'stages' => 'stages#home'
   get '/stages/:stage_token/watch' => 'stages#watch'
   # Stage CRUD
   get 'stages/edit' => 'stages#edit_stage'
@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get 'stages/:stage_token/update_stage' => 'stages#update_stage'
   get 'stages/:stage_token/destroy_stage' => 'stages#destroy_stage'
 
-  get 'upcomings/home'
+  get 'upcomings' => 'upcomings#home'
   get 'upcomings/:upcoming_token/watch' => 'upcomings#watch'
   # Upcoming CRUD
   get 'upcomings/edit' => 'upcomings#edit_upcoming'
@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   get 'upcomings/:upcoming_token/update_upcoming' => 'upcomings#update_upcoming'
   get 'upcomings/:upcoming_token/destroy_upcoming' => 'upcomings#destroy_upcoming'
 
-  get 'artists/home'
+  get 'artists' => 'artists#home'
   get 'artists/:artist_id/list' => 'artists#list'
   # Artist CRUD
   get 'artists/edit' => 'artists#edit_artist'
